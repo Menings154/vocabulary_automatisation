@@ -8,6 +8,7 @@ pyautogui = "*"
 pillow = "*"
 opencv-python = "*"
 pytesseract = "*"
+googletrans = "*"
 
 [dev-packages]
 black = "*"
