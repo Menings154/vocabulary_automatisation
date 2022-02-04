@@ -19,6 +19,10 @@ def open_edge():
     webbrowser.get('edge').open('https://read.amazon.com/notebook')
     time.sleep(1)
 
+def close_edge():
+    pyautogui.hotkey('ctrl', 'w')
+    
+
 # die ersten 2 punkte erstmal überlegen wie ich spezielles buch einfügen lann
 
 # screenshot to be used to detect if end of page

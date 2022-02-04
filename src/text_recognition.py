@@ -55,12 +55,8 @@ def img_to_text(img_path: str) -> list:
         list_of_words.append(text)
 
     return list_of_words
-#words = img_to_text(r"C:\Users\Benja\Code\Python\vocabulary_automatisation\src\images\temporary screenshots\_1.png")
-#print(words)
-
 
 def extract_words(text: str) -> str:
-    #phoneNumRegex = re.compile(r"*[a-zA-Z]*[\-')
-    pass
+    word_only = re.compile(r"\w*[*a-zA-Z- ]\w*")
+    return word_only.findall(text)
 
-print('hi\fhi')
