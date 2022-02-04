@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "919b68e7cfcb9b88a9c4255805a159b66a2278524d2138bc8ff24184639c4794"
+            "sha256": "754d6fcae1f5864a1b48b2e03985ecabc9a7463fbdfc932a8aa542be8d78b18e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -188,6 +188,13 @@
             ],
             "index": "pypi",
             "version": "==0.9.53"
+        },
+        "pyautoguiumlauts": {
+            "hashes": [
+                "sha256:a3c654944e790b89cb4e64c13f089c13211f344e847fffbbd2ff4558f698ff24"
+            ],
+            "index": "pypi",
+            "version": "==0.9.51"
         },
         "pygetwindow": {
             "hashes": [

@@ -9,6 +9,7 @@ pillow = "*"
 opencv-python = "*"
 pytesseract = "*"
 googletrans = "*"
+pyautoguiumlauts = "*"
 
 [dev-packages]
 black = "*"
