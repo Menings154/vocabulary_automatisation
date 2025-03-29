@@ -11,6 +11,7 @@ pytesseract = "*"
 googletrans = "*"
 pyautoguiumlauts = "*"
 textract = "*"
+requests = "*"
 
 [dev-packages]
 black = "*"
