@@ -3,19 +3,23 @@ import googletrans
 def tanslate_vocabulary(vocabulary):
     voc_translated = {}
     translator = googletrans.Translator()
+    problem_list = []
     for word in vocabulary:
-        translation = translator.translate(word, dest='de').text
-        translation = translation.replace('ß', 'sz')
-        translation = translation.replace('Ü', 'Ue')
-        translation = translation.replace('Ä', 'Ae')
-        translation = translation.replace('Ö', 'Oe')
-        translation = translation.replace('ü', 'ue')
-        translation = translation.replace('ä', 'ae')
-        translation = translation.replace('ö', 'oe')
+        try:
+            translation = translator.translate(word, dest='de').text
+            translation = translation.replace('ß', 'sz')
+            translation = translation.replace('Ü', 'Ue')
+            translation = translation.replace('Ä', 'Ae')
+            translation = translation.replace('Ö', 'Oe')
+            translation = translation.replace('ü', 'ue')
+            translation = translation.replace('ä', 'ae')
+            translation = translation.replace('ö', 'oe')
 
-        voc_translated[word] = translation
+            voc_translated[word] = translation
+        except:
+            pass
 
-    return voc_translated
+    return voc_translated, problem_list
 
 class vocabulary:
     def __init__(self):
@@ -34,7 +38,7 @@ class vocabulary:
         return voc_new-self.all_vocs
     
     def save_vocabulary(self, new_voc):
-        self.all_vocs += new_voc
+        self.all_vocs = self.all_vocs|new_voc
         with open(self.path, 'w') as file:
             for word in self.all_vocs:
                 file.write(word+'\n')
