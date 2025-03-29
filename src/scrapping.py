@@ -51,3 +51,11 @@ def scrap_notes():
     # Browser schließen
     driver.quit()
     return all_notes
+
+
+def sort_notes(notes, color):
+    new_notes = []
+    for note in notes:
+        if note[0] == color:
+            new_notes.append(note[1])
+    return new_notes
