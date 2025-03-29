@@ -15,3 +15,5 @@ TODO:
 -optimize waiting times
 -use virtual screen
 -let it run on the pi
+-use async, generator, contexmanager
+

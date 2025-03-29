@@ -1,4 +1,4 @@
-import screenshots, text_recognition, index_cards
+import screenshots, text_recognition, index_cards, anki
 import os, glob, googletrans
 
 voc_translated = {}
@@ -6,7 +6,8 @@ vocabulary = set()
 
 # create the screenshots
 screenshots.del_all_images_in_dir(r"C:\Users\Benja\Code\Python\vocabulary_automatisation\src\images\temporary screenshots")
-screenshots.open_edge() # shows most recently opened book
+# screenshots.open_edge() # shows most recently opened book
+screenshots.open_chrome()
 screenshots.make_screenshots()
 screenshots.close_edge()
 
@@ -23,13 +24,21 @@ translator = googletrans.Translator()
 for word in vocabulary:
     translation = translator.translate(word, dest='de').text
     translation = translation.replace('ß', 'sz')
-    translation = translation.replace('Ü', 'ü')
-    translation = translation.replace('Ä', 'ä')
-    translation = translation.replace('Ö', 'ö')
+    translation = translation.replace('Ü', 'Ue')
+    translation = translation.replace('Ä', 'Ae')
+    translation = translation.replace('Ö', 'Oe')
+    translation = translation.replace('ü', 'ue')
+    translation = translation.replace('ä', 'ae')
+    translation = translation.replace('ö', 'oe')
+
     voc_translated[word] = translation
 
 # create index_cards
-index_cards.open_cartigo()
-for key in voc_translated.keys():
-    index_cards.add_card(word_en=key, word_de=voc_translated[key])
-screenshots.close_edge()
+# index_cards.open_cartigo()
+# for key in voc_translated.keys():
+#     index_cards.add_card(word_en=key, word_de=voc_translated[key])
+# screenshots.close_edge()
+
+# save as a txt
+anki.append_voc_to_data(voc_translated)
+print(voc_translated)

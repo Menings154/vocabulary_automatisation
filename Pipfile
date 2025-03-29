@@ -10,6 +10,7 @@ opencv-python = "*"
 pytesseract = "*"
 googletrans = "*"
 pyautoguiumlauts = "*"
+textract = "*"
 
 [dev-packages]
 black = "*"
